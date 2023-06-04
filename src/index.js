@@ -47,6 +47,7 @@ function getFormInput(event) {
 function getApiData(response) {
   //console.log(response);
   let data = response.data;
+  weatherIcon(data);
   CityTemp(data);
   CityName(data);
   CityHumidity(data);
@@ -106,3 +107,9 @@ form.addEventListener("submit", getFormInput);
 //for button clicking
 let currentLocationBtn = document.querySelector("#current-location-btn");
 currentLocationBtn.addEventListener("click", getUserGeoLocation);
+function weatherIcon(data) {
+  let weatherIcon = data.weather[0].icon;
+  let weatherIconUrl = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+  let weatherIconChange = document.querySelector("#weather-icon");
+  weatherIconChange.src = `${weatherIconUrl}`;
+}
