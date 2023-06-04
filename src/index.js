@@ -35,12 +35,6 @@ function celsiusTemperature() {
   htmlReplace("temperature", celsiusValue);
 }
 
-//FOR UNIT CHANGE
-//let farenhiet = document.querySelector("#farenheit-unit");
-//farenhiet.addEventListener("click", farenhietTemperature);
-//let celsius = document.querySelector("#celsius-unit");
-//celsius.addEventListener("click", celsiusTemperature);
-
 function getFormInput(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input");
