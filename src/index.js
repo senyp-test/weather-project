@@ -234,11 +234,20 @@ farenheit.addEventListener("click", farenheitUnit);
 let celsius = document.querySelector("#celsius-unit");
 celsius.addEventListener("click", celsiusUnit);
 
-defaultCity("paris");
-
 function dayOForcast(info) {
   htmlReplace("temperature-value", info.max);
   htmlReplace("humidity-value", info.humi);
   htmlReplace("wind-value", info.win);
   htmlReplace("description", info.descriptin);
 }
+function getIPAddress() {
+  let url = "https://ipapi.co/json";
+  axios.get(url).then(getIP);
+}
+
+// Usage
+function getIP(response) {
+  let userIPCity = response.data.city;
+  defaultCity(userIPCity);
+}
+getIPAddress();
