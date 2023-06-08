@@ -236,9 +236,9 @@ celsius.addEventListener("click", celsiusUnit);
 
 defaultCity("paris");
 
-function dayOForcast(hello) {
-  htmlReplace("temperature-value", hello.max);
-  htmlReplace("humidity-value", hello.humi);
-  htmlReplace("wind-value", hello.win);
-  htmlReplace("description", hello.descriptin);
+function dayOForcast(info) {
+  htmlReplace("temperature-value", info.max);
+  htmlReplace("humidity-value", info.humi);
+  htmlReplace("wind-value", info.win);
+  htmlReplace("description", info.descriptin);
 }
