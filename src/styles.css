@@ -1,9 +1,11 @@
 .containers {
+  background-color: azure;
   font-family: "Roboto", sans-serif;
   margin: 0 auto;
   margin-top: 5%;
   text-align: center;
-  border: 2px solid blue;
+  border: 1px solid blue;
+  border-radius: 7px;
 }
 .containers h1 {
   color: blueviolet;
