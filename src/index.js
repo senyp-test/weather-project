@@ -158,7 +158,7 @@ function weatherForcastSorting(response) {
         descriptin: description,
       };
 
-      sentence += `<div class="shadow col-2 day day${index}">
+      sentence += `<div class="shadow col-2 day" id ="day${index}">
             <h6>${day}</h6>
             <strong
               ><img
@@ -171,6 +171,8 @@ function weatherForcastSorting(response) {
   });
   let forcastSection = document.querySelector("#forcast-section");
   forcastSection.innerHTML = sentence;
+  handleDaysOfForcastClicking(forcastDetails);
+  return forcastDetails;
 }
 function forecastApiCall(data) {
   let query = data;
@@ -196,6 +198,32 @@ function getCoordApiData(response) {
   CityDescription(data);
   getDate(data);
 }
+function handleDaysOfForcastClicking(response) {
+  let day0 = document.querySelector("#day0");
+  day0.addEventListener("click", function () {
+    dayOForcast(response[0]);
+  });
+  let day1 = document.querySelector("#day1");
+  day1.addEventListener("click", function () {
+    dayOForcast(response[1]);
+  });
+  let day2 = document.querySelector("#day2");
+  day2.addEventListener("click", function () {
+    dayOForcast(response[2]);
+  });
+  let day3 = document.querySelector("#day3");
+  day3.addEventListener("click", function () {
+    dayOForcast(response[3]);
+  });
+  let day4 = document.querySelector("#day4");
+  day4.addEventListener("click", function () {
+    dayOForcast(response[4]);
+  });
+  let day5 = document.querySelector("#day5");
+  day5.addEventListener("click", function () {
+    dayOForcast(response[5]);
+  });
+}
 
 let currentLocationIcon = document.querySelector(".location-icon");
 currentLocationIcon.addEventListener("click", getUserGeoLocation);
@@ -207,3 +235,11 @@ let celsius = document.querySelector("#celsius-unit");
 celsius.addEventListener("click", celsiusUnit);
 
 defaultCity("paris");
+
+function dayOForcast(hello) {
+  htmlReplace("temperature-value", hello.max);
+  htmlReplace("humidity-value", hello.humi);
+  htmlReplace("wind-value", hello.win);
+  htmlReplace("description", hello.descriptin);
+  alert(hello.days);
+}
