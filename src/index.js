@@ -235,6 +235,9 @@ let celsius = document.querySelector("#celsius-unit");
 celsius.addEventListener("click", celsiusUnit);
 
 function dayOForcast(info) {
+  let weatherIcon = info.icon;
+  let weatherIconChange = document.querySelector("#weather-icon");
+  weatherIconChange.src = `${weatherIcon}`;
   htmlReplace("temperature-value", info.max);
   htmlReplace("humidity-value", info.humi);
   htmlReplace("wind-value", info.win);
