@@ -1,3 +1,12 @@
+body {
+  background: linear-gradient(
+    112.1deg,
+    rgb(32, 38, 57) 11.4%,
+    rgb(63, 76, 119) 70.2%
+  );
+  height: 100vh;
+}
+
 .containers {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/084/856/original/freshbackground.jpg?1686245109");
   background-color: azure;
@@ -7,7 +16,7 @@
   margin: 0 auto;
   margin-top: 5%;
   text-align: center;
-  border: 1px solid blue;
+  border: 1px solid #d9dce0;
   border-radius: 7px;
 }
 .containers h1 {
