@@ -241,5 +241,4 @@ function dayOForcast(hello) {
   htmlReplace("humidity-value", hello.humi);
   htmlReplace("wind-value", hello.win);
   htmlReplace("description", hello.descriptin);
-  alert(hello.days);
 }
