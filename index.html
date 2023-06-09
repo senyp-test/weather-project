@@ -46,25 +46,29 @@
           <br />
         </form>
       </div>
-      <div class="row">
-        <div class="col-6 text-start mt-5">
-          <div class="city">
-            <h1 id="currentCity">--</h1>
-          </div>
-          <span style="display: block" id="humidity"
-            >Humidity: <span id="humidity-value">--</span><span>%</span> </span
-          ><span id="wind"
-            >Wind: <span id="wind-value">--</span><span>km/h</span>
-          </span>
+      <div class="row mt-2">
+        <div class="col-6 text-start">
+          <h1 class="text-capitalize" id="currentCity">--</h1>
         </div>
-
-        <div class="col-6 text-end mt-5 mr-0 lh-sm">
-          <h1 class="mb-0">Weather</h1>
+        <div class="col-6">
           <span style="display: block" id="day-and-time">--</span>
-          <span class="text-capitalize" id="description">--</span>
         </div>
       </div>
-
+      <div class="row mt-5 weather-details">
+        <div class="col-4">
+          <span class="fw-lighter" style="display: block" id="humidity"
+            >Humidity:<span id="humidity-value">--</span><span>%</span>
+          </span>
+        </div>
+        <div class="col-3 mt-2">
+          <span class="fw-lighter" id="wind"
+            >Wind:<span id="wind-value">--</span><span>km/h</span>
+          </span>
+        </div>
+        <div class="col-5 mt-2">
+          <span class="text-capitalize fw-lighter" id="description">--</span>
+        </div>
+      </div>
       <section class="temperature mb-10">
         <img class="" id="weather-icon" src="..." alt="weather-icon" />
         <div class="temp-value-and-unit mt-40">
