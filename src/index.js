@@ -29,8 +29,14 @@ function CityTemp(data) {
 }
 ///function to get city name from the API
 function CityName(data) {
-  let cityName = data.city.toUpperCase();
-  htmlReplace("currentCity", cityName);
+  let cityName = data.city;
+  let country = data.country;
+  if (country === "United Kingdom of Great Britain and Northern Ireland") {
+    country = "UK";
+  } else {
+    country = country;
+  }
+  htmlReplace("currentCity", `${cityName}, ${country}`);
 }
 //function to get humidity value from API
 function CityHumidity(data) {
@@ -61,7 +67,7 @@ function getFormInput(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input");
   let cityInput = city.value;
-  cityInput = cityInput.toUpperCase().replace(".", " ").trim();
+  cityInput = cityInput.replace(".", " ").trim();
   apiCallForCitySearching(cityInput);
   //console.log(cityInput);
 }
@@ -130,7 +136,6 @@ function currentLocation(position) {
 }
 //function to get current location of user
 function getUserGeoLocation(event) {
-  //event.preventDefault();
   navigator.geolocation.getCurrentPosition(currentLocation);
 }
 
@@ -240,7 +245,7 @@ function dayOForcast(info) {
   weatherIconChange.src = `${weatherIcon}`;
   htmlReplace("temperature-value", info.max);
   htmlReplace("humidity-value", info.humi);
-  htmlReplace("wind-value", info.win);
+  htmlReplace("wind-value", Math.round(info.win));
   htmlReplace("description", info.descriptin);
 }
 function getIPAddress() {
